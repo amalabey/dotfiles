@@ -38,6 +38,8 @@ chpwd() ls
 # For vim mappings: 
 	stty -ixon
 
+export DISABLE_AUTO_UPDATE=true
+
 # Completions
 # These are all the plugin options available: https://github.com/robbyrussell/oh-my-zsh/tree/291e96dcd034750fbe7473482508c08833b168e3/plugins
 #
@@ -80,3 +82,8 @@ fi
 
 source ~/dotfiles/zsh/prompt.sh
 export PATH=$PATH:$HOME/dotfiles/utils
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
