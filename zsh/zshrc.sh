@@ -58,6 +58,12 @@ done
 
 compinit
 
+# Load oh-my-zsh-theme
+if [ $USE_OHMYZSH_THEME ]; then
+    export ZSH="$HOME/.oh-my-zsh"
+    source $ZSH/oh-my-zsh.sh
+fi
+
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/history.zsh
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/key-bindings.zsh
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/completion.zsh
@@ -80,7 +86,11 @@ if [[ "${terminfo[kcud1]}" != "" ]]; then
 	bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
 fi
 
-source ~/dotfiles/zsh/prompt.sh
+
+if [ -z $USE_OHMYZSH_THEME ]; then
+    source ~/dotfiles/zsh/prompt.sh
+fi
+
 export PATH=$PATH:$HOME/dotfiles/utils
 
 # some more ls aliases

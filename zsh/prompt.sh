@@ -47,7 +47,8 @@ set_prompt() {
 	fi
 
 	# ]
-	PS1+="]: "
+	PS1+="]
+: "
 }
 
 precmd_functions+=set_prompt
